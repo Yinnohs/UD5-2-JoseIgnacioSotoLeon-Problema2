@@ -30,8 +30,13 @@ public class VeredaGt implements Vehicle {
 
     @Override
     public void move() {
-        this.currentCharge -= this.energyDelta;
-        this.movementCount ++;
+        if(this.currentCharge > 0.0){
+            this.currentCharge -= this.energyDelta;
+            this.movementCount ++;
+        }else {
+            System.out.println("El coche no tiene energia no puede moverse");
+        }
+
     }
 
     @Override
